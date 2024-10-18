@@ -4,28 +4,51 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lab4_pr1
+namespace lab4_pr3
 {
     internal class Program
     {
         static void Main(string[] args)
-        {/*
-                Ввести целое число N > 0.Найти квадрат данного числа, используя для его вычисления следующую
-                формулу: N2 = 1 + 3 + 5 + ... +(2 * N – 1).
-                После добавления к сумме каждого слагаемого выводить текущее значение суммы(в результате будут выведены квадраты всех целых чисел от 1 до N).
-            */
+        {
+            /*Ввести положительные числа A, B, C. На прямоугольнике размера A x B размещено
+              максимально возможное количество квадратов со стороной C (без наложений).
+              Найти количество квадратов, размещенных на прямоугольнике. Операции умножения и деления не использовать.
+             */
+            Console.WriteLine("Введите положительное число для А: ");
+            int a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите положительное число для B: ");
+            int b = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите положительное число для C: ");
+            int c = Convert.ToInt32(Console.ReadLine());
+            int i = 0; int j = 0;
+            int n=c; int k = 0;
+           
+            
+           if (c <= a && c <= b)
+               
+                {
 
-            Console.WriteLine("Введите число больше нуля");
-            double m = 0;
-            double n = Convert.ToDouble(Console.ReadLine());
-            for (int i = 1; i <= n; i++)
-            {
-                // m = m + (2 * i - 1);
-                m += (2 * i - 1);
-                Console.WriteLine("Число {0}, квадрат числа равен {1} ", i, m);
+
+                for (i = 0; i < a;)
+                {
+
+                    for (j = 0; j < b;)
+                    {
+                        j = j + c;
+                        k = k + 1;
+                    }
+                    
+                    i = i + c;
+
+                }
+                
+                Console.WriteLine("Количество квадратов {0}", k);
+                  
             }
-
+            
             Console.ReadKey();
+
+
 
 
         }
